@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button1 = (Button) findViewById(R.id.button1);
+        Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(this);
 
-        textView = (TextView) findViewById(R.id.textView);
+        textView = findViewById(R.id.textView);
     }
 
     @Override
@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        if (hourOfDay < 10) {
+                        if (hourOfDay >= 2 && hourOfDay < 10) {
                             textView.setText("おはよう");
-                        } else if (hourOfDay < 18) {
+                        } else if (hourOfDay >= 10 && hourOfDay < 18) {
                             textView.setText("こんにちは");
                         } else {
                             textView.setText("こんばんは");
